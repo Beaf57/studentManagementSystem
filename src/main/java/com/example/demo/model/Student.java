@@ -13,12 +13,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name="td_produto")
+@Table(name="tb_student")
 public class Student implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -30,16 +30,24 @@ public class Student implements Serializable {
 	@NotBlank
 	private String name;
 	
-	
+	@Email
 	private String email;
+	
+	@Size(min=6, max=16)
+	private String password;
 	private List<Double> notas = new ArrayList<>();
 	private AcademicStatus academicStatus;
 	
-	public Student(Long registration, String name, String email) {
+	public Student() {
+		
+	}
+	
+	public Student(Long registration, String name, String email, String password) {
 		super();
 		this.registration = registration;
 		this.name = name;
 		this.email = email;
+		this.password = password;
 	}
 
 	public Long getRegistration() {
@@ -78,6 +86,14 @@ public class Student implements Serializable {
 		return academicStatus;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public void setAcademicStatus() {
 		if(getMedia() >= 6) {
 			this.academicStatus = AcademicStatus.APROVADO;
@@ -86,6 +102,11 @@ public class Student implements Serializable {
 		}
 	}
 	
+	public void addNota(double nota) {
+		if(nota >= 0 && nota <= 10) {
+			notas.add(nota);
+		}
+	}
 	public Double getMedia() {
 		Optional<Double> media = notas.stream().reduce((a, b) -> a + b);
 		if(media.isPresent()) {
