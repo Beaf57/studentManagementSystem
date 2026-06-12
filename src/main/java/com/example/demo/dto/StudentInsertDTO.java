@@ -4,17 +4,20 @@ import java.io.Serializable;
 
 import com.example.demo.model.Student;
 
-public class StudentDTO implements Serializable {
+public class StudentInsertDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Long registration;
 	private String name;
 	private String email;
+	private String password;
 	
-	public StudentDTO(Student obj) {
+	public StudentInsertDTO(Student obj) {
 		super();
 		this.registration = obj.getRegistration();
 		this.name = obj.getName();
+		this.email = obj.getEmail();
+		this.password = obj.getPassword();
 	}
 
 	public Long getRegistration() {
@@ -41,5 +44,11 @@ public class StudentDTO implements Serializable {
 		this.email = email;
 	}
 
-	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }
