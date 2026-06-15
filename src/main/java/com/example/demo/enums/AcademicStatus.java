@@ -1,8 +1,10 @@
 package com.example.demo.enums;
 
 public enum AcademicStatus {
-	APROVADO(1),
-	REPROVADO(0);
+	APPROVED(1),
+	RECOVERY(2),
+	FAILED(3);
+	
 	
 	private final int code;
 	

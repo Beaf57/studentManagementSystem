@@ -94,11 +94,11 @@ public class Student implements Serializable {
 		this.password = password;
 	}
 
-	public void setAcademicStatus() {
+	public void updateAcademicStatus() {
 		if(getMedia() >= 6) {
-			this.academicStatus = AcademicStatus.APROVADO;
+			this.academicStatus = AcademicStatus.APPROVED;
 		} else {
-			this.academicStatus = AcademicStatus.REPROVADO;
+			this.academicStatus = AcademicStatus.FAILED;
 		}
 	}
 	

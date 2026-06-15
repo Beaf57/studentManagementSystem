@@ -40,7 +40,7 @@ public class StudentService {
 		newStudent.setEmail(obj.getEmail());
 		newStudent.setName(obj.getName());
 		newStudent.setNotas(obj.getNotas());
-		newStudent.setAcademicStatus();
+		newStudent.updateAcademicStatus();
 		return newStudent;
 	}
 	
