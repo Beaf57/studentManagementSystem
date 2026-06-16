@@ -1,23 +1,20 @@
-package com.example.demo.dto;
+package com.fariastech.studentmanagementsystem.dto;
 
 import java.io.Serializable;
 
-import com.example.demo.model.Student;
+import com.fariastech.studentmanagementsystem.entities.Student;
 
-public class StudentInsertDTO implements Serializable {
+public class StudentDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Long registration;
 	private String name;
 	private String email;
-	private String password;
 	
-	public StudentInsertDTO(Student obj) {
+	public StudentDTO(Student obj) {
 		super();
 		this.registration = obj.getRegistration();
 		this.name = obj.getName();
-		this.email = obj.getEmail();
-		this.password = obj.getPassword();
 	}
 
 	public Long getRegistration() {
@@ -44,11 +41,5 @@ public class StudentInsertDTO implements Serializable {
 		this.email = email;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 }

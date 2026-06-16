@@ -1,4 +1,4 @@
-package com.example.demo.enums;
+package com.fariastech.studentmanagementsystem.enums;
 
 public enum AcademicStatus {
 	APPROVED(1),

@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.fariastech.studentmanagementsystem.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.antlr.v4.runtime.misc.NotNull;
 
-import com.example.demo.enums.AcademicStatus;
-import com.example.demo.model.Student;
+import com.fariastech.studentmanagementsystem.entities.Student;
+import com.fariastech.studentmanagementsystem.enums.AcademicStatus;
 
 public class StudentDetailsDTO implements Serializable {
 

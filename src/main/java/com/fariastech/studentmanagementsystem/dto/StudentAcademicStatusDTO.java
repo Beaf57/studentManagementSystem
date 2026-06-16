@@ -1,9 +1,9 @@
-package com.example.demo.dto;
+package com.fariastech.studentmanagementsystem.dto;
 
 import java.io.Serializable;
 
-import com.example.demo.enums.AcademicStatus;
-import com.example.demo.model.Student;
+import com.fariastech.studentmanagementsystem.entities.Student;
+import com.fariastech.studentmanagementsystem.enums.AcademicStatus;
 
 public class StudentAcademicStatusDTO implements Serializable {
 	

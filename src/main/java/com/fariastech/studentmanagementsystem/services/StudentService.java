@@ -1,4 +1,4 @@
-package com.example.demo.services;
+package com.fariastech.studentmanagementsystem.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dto.StudentInsertDTO;
-import com.example.demo.model.Student;
-import com.example.demo.repositories.StudentRepository;
-import com.example.demo.services.exception.ObjectNotFoundException;
+import com.fariastech.studentmanagementsystem.dto.StudentInsertDTO;
+import com.fariastech.studentmanagementsystem.entities.Student;
+import com.fariastech.studentmanagementsystem.repositories.StudentRepository;
+import com.fariastech.studentmanagementsystem.services.exception.ObjectNotFoundException;
 
 @Service
 public class StudentService {
@@ -30,8 +30,8 @@ public class StudentService {
 		return student.orElseThrow(() -> new ObjectNotFoundException("The specified object was not found."));
 	}
 	
-	public Student update(Student obj) {
-		Student newStudent = findById(obj.getRegistration());
+	public Student update(Student obj, Long id) {
+		Student newStudent = findById(id);
 		UpdateDate(newStudent, obj);
 		return repo.save(newStudent);
 	}

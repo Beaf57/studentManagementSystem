@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.fariastech.studentmanagementsystem.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import com.example.demo.enums.AcademicStatus;
+import com.fariastech.studentmanagementsystem.enums.AcademicStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -48,6 +48,13 @@ public class Student implements Serializable {
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+	
+	public Student(Long registration, String name, String email) {
+		super();
+		this.registration = registration;
+		this.name = name;
+		this.email = email;
 	}
 
 	public Long getRegistration() {

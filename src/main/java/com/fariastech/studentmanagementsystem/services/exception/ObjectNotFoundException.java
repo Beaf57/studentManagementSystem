@@ -1,4 +1,4 @@
-package com.example.demo.services.exception;
+package com.fariastech.studentmanagementsystem.services.exception;
 
 public class ObjectNotFoundException extends RuntimeException {
 
